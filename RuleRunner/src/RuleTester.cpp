@@ -41,6 +41,7 @@ void RuleTester::RunTest()
 {
     if(!rule->TestRule())
         allPassed = false;
+    delete(rule);
 }
 
 // Check if the given input is valid and store it in vector.
@@ -75,5 +76,5 @@ void RuleTester::checkAllPassed()
 
 RuleTester::~RuleTester()
 {
-    delete(rule);
+
 }
