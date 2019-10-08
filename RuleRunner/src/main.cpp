@@ -4,11 +4,9 @@
 int main(int argc, char** argv)
 {
     // Tester object to test the rules
-    RuleTester* tester;
+    RuleTester* tester = new RuleTester;
 
     // Test RuleA
-    RuleType  a = A;
-    RuleType* x = &a;
     tester->setRule(A, argc, argv);
     tester->RunTest();
 
@@ -23,7 +21,7 @@ int main(int argc, char** argv)
     // Check if all test passed
     tester->checkAllPassed();
 
-    tester->~RuleTester();
+    delete(tester);
 
     return 0;
 }
