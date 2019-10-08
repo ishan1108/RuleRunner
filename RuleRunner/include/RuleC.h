@@ -12,7 +12,8 @@
 class RuleC : public Rule
 {
 public:
-    RuleC(std::vector<int> input) : Rule(input){};
+    RuleC(std::vector<int>& input) : Rule(input){};
+    ~RuleC(){};
 
 private:
     bool TestRule();

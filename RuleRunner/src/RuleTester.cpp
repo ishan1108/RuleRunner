@@ -11,7 +11,7 @@ RuleTester::RuleTester()
 }
 
 // Parse the input and set the rule according to the rule type provided
-void RuleTester::setRule(RuleType ruleType, int count, char **in)
+void RuleTester::setRule(RuleType ruleType, int& count, char **in)
 {
     std::vector<int> parsedInput = ParseInput(count, in);
     if(ruleType == A)
@@ -44,7 +44,7 @@ void RuleTester::RunTest()
 }
 
 // Check if the given input is valid and store it in vector.
-std::vector<int> RuleTester::ParseInput(int count, char** in)
+std::vector<int> RuleTester::ParseInput(int& count, char** in)
 {
     std::vector<int> input;
     for(int i = 1; i < count; ++i)
@@ -71,4 +71,9 @@ void RuleTester::checkAllPassed()
     {
         std::cout << "ALL rules passed." << std::endl;
     }
+}
+
+RuleTester::~RuleTester()
+{
+    delete(rule);
 }

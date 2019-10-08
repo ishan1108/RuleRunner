@@ -12,12 +12,13 @@
 class Rule {
 public:
     Rule(){};
-    Rule(std::vector<int> numbers)
+    Rule(std::vector<int>& numbers)
     {
         input = numbers;
     };
 
     virtual bool TestRule()=0;
+    virtual ~Rule(){};
 
 
 protected:

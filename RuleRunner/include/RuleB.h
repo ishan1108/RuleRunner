@@ -11,7 +11,8 @@
 class RuleB : public Rule
 {
 public:
-    RuleB(std::vector<int> input) : Rule(input){};
+    RuleB(std::vector<int>& input) : Rule(input){};
+    ~RuleB(){};
 
 private:
     bool TestRule();

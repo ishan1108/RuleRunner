@@ -20,13 +20,14 @@ class RuleTester {
 public:
 
     RuleTester();
-    void setRule(RuleType ruleType, int count, char** in);
+    void setRule(RuleType ruleType, int& count, char** in);
     void RunTest();
     void checkAllPassed();
+    ~RuleTester();
 
 private:
     Rule* rule;
-    std::vector<int> ParseInput(int count, char** in);
+    std::vector<int> ParseInput(int& count, char** in);
     bool allPassed = true;
 };
 
